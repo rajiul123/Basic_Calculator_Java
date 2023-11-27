@@ -1,0 +1,65 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Calculator calculator = new Calculator();
+        String msg = " ";
+        Double result = 0.0;
+        
+        System.out.print("Number 1: ");
+        double num1 = sc.nextDouble();
+        
+        System.out.print("Operator: ");
+        char operator = sc.next().charAt(0);
+        
+        System.out.print("Number 2: ");
+        double num2 = sc.nextDouble();
+        
+        if (operator == '+' | operator == '-' | operator == '*' | operator == '/') {
+            switch (operator) {
+                case '+':
+                    result = calculator.add(num1, num2);
+                    break;
+                case '-':
+                    result = calculator.sub(num1, num2);
+                    break;
+                case '*':
+                    result = calculator.pro(num1, num2);
+                    break;
+                case '/':
+                    result = calculator.div(num1, num2);
+                    break;
+                default:
+                    result = 0.0;
+            }
+            System.out.println(result);
+        } else {
+            System.out.println("Invalid Operator");
+        }
+    }
+}
+
+class Calculator {
+    double a;
+    double b;
+    
+    double add(double a, double b) {
+        return a + b;
+    }
+    
+    double sub(double a, double b) {
+        return a - b;
+    }
+    
+    double pro(double a, double b) {
+        return a * b;
+    }
+    
+    double div (double a, double b) {
+        return a / b;
+    }
+}
